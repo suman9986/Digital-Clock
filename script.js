@@ -5,7 +5,7 @@ function clock() {
 
     let date = new Date()
     let hours = date.getHours() % 12 // to convert to 12 hours format
-    let ampm = date.getHours() == 12 ? "AM" : "PM"
+    let ampm = date.getHours() >= 12 ? "PM" : "AM"
     hours = hours === 0 ? 12 : hours; // handle the midnight(0)
 
     let minutes = date.getMinutes()
