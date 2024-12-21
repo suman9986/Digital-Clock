@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=poppins:200,300,400,500,600,700,800,900&display= swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2f363e;
+    gap: 80px;
+}
+
+#clock {
+    position: relative;
+    margin: 10px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+
+}
+
+#secDots,
+#minDots,
+#hrDots {
+    position: relative;
+    margin: 40px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    rotate: 90deg;
+}
+
+#hrDots::before,
+#minDots::before,
+#secDots::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    inset: -20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+        10px 10px 75px rgba(0, 0, 0, 0.25),
+        inset 5px 5px 10px rgb(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgb(255, 255, 255, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+
+}
+
+#secDots h2,
+#minDots h2,
+#hrDots h2 {
+    position: absolute;
+    text-align: center;
+    transform: rotate(-90deg);
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 4em;
+    font-weight: 400;
+    
+    color: var(--clr)
+
+}
+
+
+#secDots h2 span,
+#minDots h2 span,
+#hrDots h2 span {
+    position: absolute;
+    font-size: 0.28em;
+    font-weight: 500;
+    bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#secDots b{
+    position: absolute;
+    display: inline-flex;
+    transform: rotate(-90deg) translate(-30px, 90px);
+    color: aliceblue;
+}
+
+#secDots .dot{
+    position: absolute;
+    top : 50%;
+    width: 10px;
+    height: 3px;
+    background-color: var(--clr);
+    transform-origin: 100px;
+}
+
+#secDots .active.dot{
+    background: var(--clr) ;
+    box-shadow: 0 0 10px var(--clr),
+    0 0 20px var(--clr),
+    0 0 30px var(--clr)
+
+}
+
+#secDots .active.dot ~ .dot{
+   background: #555;
+}
+
+#secDots .dot:nth-child(5n+5){
+    width: 20px;
+}
+
+#minDots .dot{
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 3px;
+    background-color: var(--clr);
+    transform-origin: 100px;
+}
+ 
+#minDots .active.dot{
+    background: var(--clr) ;
+    box-shadow: 0 0 10px var(--clr),
+    0 0 20px var(--clr),
+    0 0 30px var(--clr)
+}
+
+#minDots .active.dot ~ .dot{
+    background: #555;
+}
+
+#minDots .dot:nth-child(5n+5){
+    width: 20px;
+}
+
+#hrDots .dot{
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 3px;
+    background-color: var(--clr);
+    transform-origin: 100px;
+}
+#hrDots .active.dot{
+    background: var(--clr) ;
+    box-shadow: 0 0 10px var(--clr),
+    0 0 20px var(--clr),
+    0 0 30px var(--clr),
+}
+#hrDots .active.dot ~ .dot{
+    background: #555;
+}
+
+#hrDots .dot{
+    width: 20px;
+} 
+
+#hrDots .dot::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--clr);
+    box-shadow: 1.5px 9px var(--clr),
+    4px 18px var(--clr),
+    7px 27px var(--clr);
+}
+
+#hrDots .active.dot ~ .dot::before{
+    background: #555;
+    box-shadow: 1.5px 9px #555,
+    4px 18px #555,
+    7px 27px #555;
+}
